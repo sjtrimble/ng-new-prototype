@@ -4,8 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Desktop View
 
-![desktop view](/src/assets/to/cli-app-desktop.png "Desktop View")
+![desktop view](/src/assets/cli-app-desktop.png "Desktop View" | width=200)
 
 ## Mobile View
 
-![mobile view](/src/assets/cli-app-mobile.png "Mobile View")
+![mobile view](/src/assets/cli-app-mobile.png "Mobile View" | width=400)
