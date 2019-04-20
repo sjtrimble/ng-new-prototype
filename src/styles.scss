@@ -140,6 +140,7 @@ body {
       max-width: 600px;
       border-radius: 6px;
       padding-top: 45px;
+      margin: 8px;
       overflow: hidden;
       background-color: rgb(15, 15, 16);
 
@@ -172,5 +173,29 @@ body {
         }
       }
     }
+
+    .circle-link {
+      height: 40px;
+      width: 40px;
+      border-radius: 40px;
+      margin: 8px;
+      background-color: white;
+      border: 1px solid #EEEEEE;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      transition: 1s ease-out;
+
+      &:hover {
+        transform: translateY(-0.25rem);
+        box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+
+  footer {
+    margin-top: 24px;
   }
 }
