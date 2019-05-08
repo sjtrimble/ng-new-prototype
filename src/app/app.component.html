@@ -1,121 +1,136 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<div class="toolbar">
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
   <img
     width="40"
     alt="Angular Logo"
     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
   />
-  <div>Welcome</div>
+  <span>Welcome</span>
 </div>
 
-<div class="content">
+<div class="content" role="main">
 
+  <!-- Highlight Card -->
   <div class="card highlight-card card-small">
-    <img id="rocket" src="../assets/ng-rocket.png">
+    <img id="rocket" src="../assets/ng-rocket.png" alt="Rocket Ship">
     <span>{{ title }} app is running!</span>
-    <img id="rocket-smoke" src="../assets/rocket-smoke.png">
+    <img id="rocket-smoke" src="../assets/rocket-smoke.png" alt="Rocket Ship Smoke">
   </div>
 
+  <!-- Resources -->
   <h2>Resources</h2>
   <p>Here are some links to help you get started:</p>
 
   <div class="card-container">
-    <div class="card">
+    <a class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
       <i class="material-icons">school</i>
-      <a target="_blank" rel="noopener" href="https://angular.io/tutorial"
-        >Learn Angular</a
-      >
+      <span>Learn Angular</span>
       <i class="material-icons">chevron_right</i>
-    </div>
+    </a>
 
-    <div class="card">
+    <a class="card" target="_blank" rel="noopener" href="https://angular.io/cli">
       <i class="material-icons">code</i>
-      <a target="_blank" rel="noopener" href="https://angular.io/cli"
-        >CLI Documentation</a
-      >
+      <span>CLI Documentation</span>
       <i class="material-icons">chevron_right</i>
-    </div>
+    </a>
 
-    <div class="card">
+    <a class="card" target="_blank" rel="noopener" href="https://blog.angular.io/">
       <i class="material-icons">whatshot</i>
-      <a target="_blank" rel="noopener" href="https://blog.angular.io/"
-        >Angular Blog</a
-      >
+      <span>Angular Blog</span>
       <i class="material-icons">chevron_right</i>
-    </div>
+    </a>
+
   </div>
 
   <hr />
 
+  <!-- Next Steps -->
   <h2>Next Steps</h2>
   <p>What do you want to do next with your app?</p>
 
+  <input type="hidden" #selection>
+
   <div class="card-container">
-    <div class="card card-small">
+    <div class="card card-small" (click)="selection.value = 'component'" tabindex="0">
       <i class="material-icons">add</i>
       <span>New Component</span>
     </div>
 
-    <div class="card card-small">
+    <div class="card card-small" (click)="selection.value = 'material'" tabindex="0">
       <i class="material-icons">add</i>
       <span>Angular Material</span>
     </div>
 
-    <div class="card card-small">
+    <div class="card card-small" (click)="selection.value = 'dependency'" tabindex="0">
       <i class="material-icons">add</i>
       <span>Add Dependency</span>
     </div>
 
-    <div class="card card-small">
+    <div class="card card-small" (click)="selection.value = 'test'" tabindex="0">
       <i class="material-icons">add</i>
       <span>Run Test</span>
     </div>
 
-    <div class="card card-small">
+    <div class="card card-small" (click)="selection.value = 'build'" tabindex="0">
       <i class="material-icons">add</i>
       <span>Build for Production</span>
     </div>
   </div>
 
-  <div class="terminal">
-    <pre>
-    <span class="code">ng generate component xyz</span>
-  </pre>
+  <!-- Terminal -->
+  <div class="terminal" [ngSwitch]="selection.value">
+      <pre *ngSwitchDefault>ng generate component xyz</pre>
+      <pre *ngSwitchCase="'material'">ng add @angular/material</pre>
+      <pre *ngSwitchCase="'dependency'">ng add _____</pre>
+      <pre *ngSwitchCase="'test'">ng test</pre>
+      <pre *ngSwitchCase="'build'">ng build --prod</pre>
   </div>
 
+  <!-- Links -->
   <div class="card-container">
-    <a class="circle-link" title="Animations" href="https://angular.io/guide/animations" target="_blank">
-      <img src="../assets/animations.png" height="20px" />
+    <a class="circle-link" title="Animations" href="https://angular.io/guide/animations" target="_blank" rel="noopener">
+      <img src="../assets/animations.png" height="20px" alt="Angular Animations Logo"/>
     </a>
 
-    <a class="circle-link" title="CLI" href="https://cli.angular.io/" target="_blank">
-      <img src="../assets/cli.png" height="20px" />
+    <a class="circle-link" title="CLI" href="https://cli.angular.io/" target="_blank" rel="noopener">
+      <img src="../assets/cli.png" height="20px" alt="Angular CLI Logo"/>
     </a>
 
-    <a class="circle-link" title="Augury" href="https://augury.rangle.io/" target="_blank">
-      <img src="../assets/augury.png" height="20px" />
+    <a class="circle-link" title="Augury" href="https://augury.rangle.io/" target="_blank" rel="noopener">
+      <img src="../assets/augury.png" height="20px" alt="Angular Augury Logo"/>
     </a>
 
-    <a class="circle-link" title="Protractor" href="https://www.protractortest.org/" target="_blank">
-      <img src="../assets/protractor.png" height="20px" />
+    <a class="circle-link" title="Protractor" href="https://www.protractortest.org/" target="_blank" rel="noopener">
+      <img src="../assets/protractor.png" height="20px" alt="Angular Protractor Logo"/>
     </a>
 
-    <a class="circle-link" title="Find a Local Meetup" href="https://www.meetup.com/topics/angularjs/" target="_blank">
-      <img src="../assets/meetup-icon.png" height="20px" />
+    <a class="circle-link" title="Find a Local Meetup" href="https://www.meetup.com/topics/angularjs/" target="_blank" rel="noopener">
+      <img src="../assets/meetup-icon.png" height="20px" alt="Meetup Logo"/>
     </a>
 
-    <a class="circle-link" title="Join the Conversation on Gitter" href="https://gitter.im/angular/angular" target="_blank">
-      <img src="../assets/gitter-icon.png" height="20px" />
+    <a class="circle-link" title="Join the Conversation on Gitter" href="https://gitter.im/angular/angular" target="_blank" rel="noopener">
+      <img src="../assets/gitter-icon.png" height="20px" alt="Gitter Logo"/>
     </a>
   </div>
 
+  <!-- Footer -->
   <footer>
-    <p>Love Angular? <a href="https://github.com/angular/angular">Give our repo a star.</a></p>
+    <!-- <div> -->
+      Love Angular?&nbsp;
+      <a href="https://github.com/angular/angular" target="_blank" rel="noopener"> Give our repo a star.
+        <div class="github-star-badge">
+          <i class="material-icons">star</i>
+          Star
+        </div>
+      </a>
+      <a href="https://github.com/angular/angular" target="_blank" rel="noopener">
+        <i class="material-icons">keyboard_arrow_right</i>
+      </a>
+    <!-- </div> -->
   </footer>
 
-  <img class="background" src="../assets/clouds.png">
+  <img id="clouds" src="../assets/clouds.png" atl="Gray Clouds">
 
 </div>
-
-<router-outlet></router-outlet>
